@@ -1,24 +1,57 @@
 # fresh-adventure-fe
 
-FreshLens 웹 대시보드 프런트엔드 레포 (Public).
+Frontend repository of fresh-adventure (public).
 
-메인 레포: [fresh-adventure](https://github.com/AI-Campus-1st/fresh-adventure)
+## Purpose and Scope
 
-## 화면
+- User interface and user experience
+- Dashboard presentation and data visualization
+- Integration with the backend API (`fresh-adventure-be`)
 
-| 단계 | 화면 |
-| --- | --- |
-| MVP | 메인(이번 주 브리핑), 수요 트렌드, 원가·수익성 |
-| 전체 구축 | 타깃 고객, 시즌·프로모션 캘린더, AI 마케팅 어시스턴트 |
+## Directory (provisional)
 
-## 기술 스택
+```text
+public/         static images, icons, fonts
+src/
+├── app/        application entry and providers
+├── pages/      page-level views
+├── layouts/    shared layouts
+├── components/ common, charts, dashboard, feedback
+├── features/   feature modules
+├── services/api/ backend API clients
+├── hooks/ types/ utils/ constants/ styles/
+tests/          unit, integration, e2e
+docs/           local documentation
+```
 
-웹 프레임워크 + 차트 라이브러리 (예: React + Plotly.js) — **팀 합의 후 확정**하고, 확정되면 이 레포에 프로젝트를 초기화합니다.
+This structure is provisional until the frontend technology stack is approved.
 
-배포: Amazon S3 + CloudFront
+## Planned Screens
 
-## 규칙
+Planned (not implemented): weekly briefing, demand trends, cost and profitability (MVP);
+target customers, season and promotion calendar, AI marketing assistant (later stages).
 
-- ⚠️ **Public 레포입니다.** API 키, LLM 키, DB 정보 등 비밀값을 코드나 `.env`에 넣어 커밋하지 마세요. 외부 API·LLM 호출은 모두 백엔드([fresh-adventure-be](https://github.com/AI-Campus-1st/fresh-adventure-be))를 거칩니다.
-- 프런트엔드 환경변수에는 백엔드 주소처럼 **공개돼도 되는 값만** 둡니다. (빌드 결과물에 그대로 노출됩니다)
-- 협업 규칙: [메인 레포 conventions](https://github.com/AI-Campus-1st/fresh-adventure/blob/main/docs/conventions.md)
+## Related Repositories
+
+| Repository | Visibility | Responsibility |
+| --- | --- | --- |
+| [fresh-adventure](https://github.com/AI-Campus-1st/fresh-adventure) | Public | Project documentation, management, shared contracts, deliverables |
+| [fresh-adventure-data](https://github.com/AI-Campus-1st/fresh-adventure-data) | Private | Data ingestion, preprocessing, analytics, validation, loading |
+| [fresh-adventure-fe](https://github.com/AI-Campus-1st/fresh-adventure-fe) | Public | User interface, dashboard, data visualization |
+| [fresh-adventure-be](https://github.com/AI-Campus-1st/fresh-adventure-be) | Private | API services, database access, business logic, AI/LLM integration |
+
+Private repositories are accessible to team members only.
+
+## Current Status
+
+- Phase 01 — directory structure only. No framework has been initialized and no dependencies are installed.
+
+## Security
+
+This is a **public** repository. Never place API keys, LLM keys, or database information in code or environment files.
+Frontend environment variables are embedded in build output, so only values that are safe to publish may be used.
+
+## Documentation
+
+- Local: [docs/README.md](docs/README.md)
+- Shared: https://github.com/AI-Campus-1st/fresh-adventure/tree/main/docs
